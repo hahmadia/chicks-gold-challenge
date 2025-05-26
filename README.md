@@ -1,3 +1,8 @@
+## Chicks Gold Frontend Challenge
+
+Tackling the Chicks Gold frontend challenge.
+[View Challenge PDF](./chicks-gold-fe-challenge.pdf)
+
 ## Live Demo
 
 https://hahmadia.github.io/chicks-gold-frontend-challenge
@@ -7,5 +12,5 @@ https://hahmadia.github.io/chicks-gold-frontend-challenge
 To run this project locally, use:
 
 ```bash
-npm run dev
+npm i && npm run dev
 ```
