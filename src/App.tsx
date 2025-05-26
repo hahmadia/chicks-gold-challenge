@@ -9,7 +9,7 @@ function App() {
     <CartProvider>
         <Header />
          <ProductListingPage />
-        {/* <Footer />  */}
+        <Footer /> 
     </CartProvider>
   );
 }
