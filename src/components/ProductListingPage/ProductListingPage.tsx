@@ -23,14 +23,12 @@ const ProductListingPage = () => {
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = [...mockProducts];
 
-    // Apply game filter
     if (selectedGame) {
       filtered = filtered.filter(product => 
         product.gameType.toLowerCase() === selectedGame.toLowerCase()
       );
     }
 
-    // Apply search filter
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(product =>
@@ -39,14 +37,12 @@ const ProductListingPage = () => {
       );
     }
 
-    // Apply item type filter
     if (selectedItemType !== 'All') {
       filtered = filtered.filter(product =>
         product.itemType.toLowerCase() === selectedItemType.toLowerCase()
       );
     }
 
-    // Apply price filter
     if (selectedPrice !== 'All') {
       filtered = filtered.filter(product => {
         const price = product.isOnSale ? product.salePrice! : product.price;
@@ -63,7 +59,6 @@ const ProductListingPage = () => {
       });
     }
 
-    // Apply sorting
     switch (sortBy) {
       case 'price-asc':
         filtered.sort((a, b) => {
@@ -89,7 +84,6 @@ const ProductListingPage = () => {
     return filtered;
   }, [selectedGame, searchQuery, selectedPrice, selectedItemType, sortBy]);
 
-  // Calculate pagination
   const totalItems = filteredAndSortedProducts.length;
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -98,7 +92,6 @@ const ProductListingPage = () => {
     startIndex + ITEMS_PER_PAGE
   );
 
-  // Generate page numbers for pagination
   const getPageNumbers = () => {
     if (totalPages <= 5) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
