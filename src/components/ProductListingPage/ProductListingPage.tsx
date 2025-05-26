@@ -82,7 +82,7 @@ const ProductListingPage = () => {
       case 'name':
         filtered.sort((a, b) => a.name.localeCompare(b.name));
         break;
-      default: // 'Featured' - keep original order
+      default:
         break;
     }
 
@@ -104,7 +104,7 @@ const ProductListingPage = () => {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
 
-    const pages: (number | string)[] = [1]; // Always show first page
+    const pages: (number | string)[] = [1]; 
     
     if (currentPage <= 3) {
       pages.push(2, 3, 4, '...', totalPages);

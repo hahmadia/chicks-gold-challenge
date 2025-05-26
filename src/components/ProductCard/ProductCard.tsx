@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './ProductCard.css';
 import cart from '../../assets/cart.svg';
 interface ProductCardProps {
@@ -16,7 +16,7 @@ interface ProductCardProps {
   onAddToCart: (id: string, quantity: number) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
+const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   const [quantity, setQuantity] = useState(1);
 
   return (

@@ -9,7 +9,6 @@ interface CartItem {
 interface CartContextType {
   cartItems: CartItem[];
   addToCart: (id: string, quantity: number) => void;
-  removeFromCart: (id: string) => void;
   getTotalItems: () => number;
 }
 
@@ -34,16 +33,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  const removeFromCart = (id: string) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
-  };
-
   const getTotalItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, getTotalItems }}>
+    <CartContext.Provider value={{ cartItems, addToCart, getTotalItems }}>
       {children}
     </CartContext.Provider>
   );
