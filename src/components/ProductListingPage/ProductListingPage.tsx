@@ -133,7 +133,7 @@ const ProductListingPage = () => {
                   setCurrentPage(1);
                 }}
               >
-                <option value="">Select a game</option>
+                <option value="">All Games</option>
                 <option value="RS3">RuneScape 3</option>
                 <option value="OSRS">Old School RuneScape</option>
                 <option value="WOW">World of Warcraft</option>

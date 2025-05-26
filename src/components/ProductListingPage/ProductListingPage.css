@@ -113,13 +113,6 @@ select {
   font-size: 0.9rem;
 }
 
-select {
-  background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  padding-right: 2rem;
-}
-
 .results-header {
   display: flex;
   justify-content: space-between;
@@ -138,11 +131,10 @@ select {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   width: 100%;
   box-sizing: border-box;
-  grid-auto-rows: 1fr;
 }
 
 .pagination {
@@ -193,89 +185,6 @@ select {
   transition: background-color 0.2s ease;
 }
 
-/* Add responsive adjustments */
-@media (max-width: 1200px) {
-  .content-wrapper {
-    padding: 1.5rem;
-  }
-  
-  .product-listing-container {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .content-wrapper {
-    padding: 1rem;
-  }
-
-  .filters-section {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .left-filters,
-  .right-filters {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .search-bar {
-    width: 100%;
-  }
-
-  .search-bar input {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .game-selector,
-  .price-selector,
-  .item-type-selector {
-    flex: 1;
-    min-width: 140px;
-  }
-
-  .products-grid {
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .content-wrapper {
-    padding: 0.5rem;
-  }
-
-  .product-listing-container {
-    padding: 0.75rem;
-  }
-
-  .products-grid {
-    gap: 0.75rem;
-  }
-}
-
-/* Add loading state styles if needed */
-.products-grid.loading {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-/* Add empty state styles */
-.empty-state {
-  text-align: center;
-  padding: 3rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
 .product-listing-container {
   width: 100%;
   background: rgba(26, 29, 43, 0.95);
@@ -285,7 +194,6 @@ select {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
 }
-
 
 .results-count {
   color:white;
